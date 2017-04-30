@@ -21,6 +21,8 @@ public class Casual
 {
 	public static void main(String[] args)
 	{
+		System.out.println("comments do not count?");
+//		System.out.println("make some casual changes");
 		//注意，不是返回的不是接口类型
 		System.out.println(new Book().getClass().getName());
 		/*
