@@ -42,16 +42,23 @@ public class Mybatis
 //			users.add(new User("list3", "djskf"));
 //			mapper.insertList(users);
 			//
-//			User user=mapper.selectUser(11);
-//			System.out.println(user);
+//			User user=mapper.selectUser(9);
+			User user=new User();
+			user.setUserName("");
+			List<User> users=mapper.selectByUsername(user);
+			System.out.println(users.size());
+//			自动可以转换为list结果类型
+//			System.out.println(mapper.selectUseMap());
 			//
 //			User user2=new User("what", "my");
 //			user2.setBirth(new Date());
 //			mapper.insertUser(user2);
-			mapper.insertTest(new User("qwe", "pass"));
+//			mapper.insertTest(new User("qwe", "pass"));
+			
+			
 			//remember this line
 			session.commit();
-			System.out.println("here");
+//			System.out.println("here");
 		} catch (IOException e)
 		{
 			e.printStackTrace();

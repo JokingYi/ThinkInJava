@@ -10,4 +10,6 @@ public interface UserMapper
 	void insertUser(User user);
 	void insertTest(User user);
 	void insertList(List<User> users);
+	List<User> selectUseMap();
+	List<User> selectByUsername(User user);
 }
