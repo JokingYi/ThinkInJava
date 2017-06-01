@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 
 public final class Directory
 {
+	
 	public static File[] local(File dir, String regex)
 	{
 		return dir.listFiles(new FilenameFilter()
