@@ -11,7 +11,9 @@ public class AboutFinal
 	private final String test;
 	//static final ---only one 
 	//final ---one for each instance
+	//要么在声明时初始化，要么在static块中初始化
 	private static final String TE_STRING="";
+	
 	public AboutFinal(String string)
 	{
 		test=string;

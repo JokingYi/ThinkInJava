@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.lzh.innerClass.NestedClass;
+import com.lzh.innerClass.NestedClass.InClass;
+import com.lzh.innerClass.NestedClass.InClass2;
+
 interface Packable
 {
 	void print();
@@ -23,8 +27,11 @@ public class Casual
 {
 	public static void main(String[] args)
 	{
-		Casual casual=new Casual();
-		System.out.println(casual.aboutException());
+		InClass2 inClass2=new NestedClass().new InClass2();
+		
+//		Casual casual=new Casual();
+//		System.out.println(casual.aboutException());
+		
 //		List<String> strings=new ArrayList<>();
 //		strings.add("1");
 //		strings.add("2");
