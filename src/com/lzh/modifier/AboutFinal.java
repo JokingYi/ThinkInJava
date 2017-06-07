@@ -1,5 +1,7 @@
 package com.lzh.modifier;
 
+import com.lzh.model.Book;
+
 final class MethodInFinal
 {
 	public void foo(){}
@@ -18,6 +20,12 @@ public class AboutFinal
 	{
 		test=string;
 	}
+	
+	public String getTest()
+	{
+		return test;
+	}
+	
 	public static void main(String[] args)
 	{
 		//蓝而，并不是final，只是有那个作用？

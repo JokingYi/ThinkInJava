@@ -6,6 +6,7 @@ public class Book
 	private float price;
 	public Book()
 	{
+		name="";
 	}
 	public Book(String name, float price)
 	{
