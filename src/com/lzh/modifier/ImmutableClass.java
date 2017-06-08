@@ -24,12 +24,15 @@ public class ImmutableClass
 
 	public static void main(String[] args)
 	{
+		// 有关该不变类的测试
 		Book book=new Book("first", 2f);
 		String test="test";
 		ImmutableClass im=new ImmutableClass(book, test);
-		book.setName("later");
-		System.out.println(im.getBook().getName());//first
-//		test="test again";
-//		System.out.println(im.getString());//test
+		
+//		book.setName("later");
+//		System.out.println(im.getBook().getName());//first
+		
+		test="test again";
+		System.out.println(im.getString());//test
 	}
 }

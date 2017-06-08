@@ -1,5 +1,6 @@
 package com.lzh.random;
 
+import java.lang.ref.Reference;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

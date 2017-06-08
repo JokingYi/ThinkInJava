@@ -1,7 +1,5 @@
 package com.lzh.innerClass;
 
-import java.awt.print.Printable;
-
 public class NestedClass
 {
 	private void print()
