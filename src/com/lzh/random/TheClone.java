@@ -110,7 +110,7 @@ public class TheClone
 		
 		System.out.println(b==a);//1和2对应的输出结果是:true和false
 		*/
-		
+		/*
 		//
 		Person person=new Person("long", 0);
 		try
@@ -122,6 +122,7 @@ public class TheClone
 		{
 			e.printStackTrace();
 		}
+		*/
 		
 		/*
 		//fail to cloned if not implement cloneable

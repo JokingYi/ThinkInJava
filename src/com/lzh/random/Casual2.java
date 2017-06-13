@@ -17,6 +17,7 @@ public class Casual2
 {
 	public static void main(String[] args)
 	{
+		/*
 		List<List<String>> container=new ArrayList<>();
 		List<String> items=new ArrayList<>();
 		for (int i = 0; i < 4; i++)
@@ -31,7 +32,7 @@ public class Casual2
 		//因为添加的指向items的指针，所以改动其中一个，就会改动其他
 		//so its needed to shift the "items" into the for block
 		System.out.println(container);
-		
+		*/
 		//cost 2 bytes(16 bits)
 		char one='a';
 		
