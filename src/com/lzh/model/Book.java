@@ -34,4 +34,9 @@ public class Book
 	{
 		return "book info: "+name+" "+price;
 	}
+	@Override
+	public Object clone() throws CloneNotSupportedException
+	{
+		return (Book)super.clone();
+	}
 }

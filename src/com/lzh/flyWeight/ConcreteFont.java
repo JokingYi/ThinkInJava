@@ -1,6 +1,7 @@
 package com.lzh.flyWeight;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ConcreteFont implements Font
