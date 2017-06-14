@@ -11,6 +11,7 @@ class GroundHog
 	public GroundHog(int id)
 	{
 		this.id = id;
+		System.out.println("test if executed in reflection");//╣Всцак
 	}
 	@Override
 	public String toString()

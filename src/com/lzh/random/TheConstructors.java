@@ -10,17 +10,26 @@ class Super
 	}
 	public Super()
 	{
-		// TODO Auto-generated constructor stub
+	}
+	public void print()
+	{
+		System.out.println("the method in super");
 	}
 }
 
 class Base extends Super
 {
+	public void what()
+	{
+		super.print();
+	}
 }
 
 public class TheConstructors
 {
 	public static void main(String[] args)
 	{
+		//test super keyword
+		new Base().what();
 	}
 }

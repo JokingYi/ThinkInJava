@@ -14,6 +14,7 @@ class Person implements Cloneable
 		super();
 		this.name = name;
 		this.id = id;
+		System.out.println("constructor");
 	}
 	public Person()
 	{
@@ -35,11 +36,11 @@ class Person implements Cloneable
 		this.id = id;
 	}
 	@Override
-	protected Object clone() throws CloneNotSupportedException
+	protected Person clone() throws CloneNotSupportedException
 	{
 		System.out.println(super.getClass().getName());//返回运行时类的信息，此处即Person
 		System.out.println(this.getClass().getSuperclass().getName());
-		return super.clone();
+		return (Person) super.clone();
 	}
 }
 
@@ -110,22 +111,22 @@ public class TheClone
 		
 		System.out.println(b==a);//1和2对应的输出结果是:true和false
 		*/
-		/*
+		
 		//
 		Person person=new Person("long", 0);
 		try
 		{
-			Person person2=(Person) person.clone();
+			//没有调用构造函数
+			Person person2=person.clone();
 			System.out.println(person==person2);//输出：true，对象clone是深拷贝
 			System.out.println(person.getName()==person2.getName());//输出：true，对象内字段clone是浅拷贝
 		} catch (CloneNotSupportedException e)
 		{
 			e.printStackTrace();
 		}
-		*/
 		
 		/*
-		//fail to cloned if not implement cloneable
+		//fail to cloned if not implement cloneable, in addition, the array implements the clonable by default
 		Book book=new Book("a", 0f);
 		try
 		{
