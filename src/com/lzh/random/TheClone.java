@@ -9,12 +9,13 @@ class Person implements Cloneable
 {
 	private String name;
 	private int id;
+	
 	public Person(String name, int id)
 	{
 		super();
 		this.name = name;
 		this.id = id;
-		System.out.println("constructor");
+//		System.out.println("constructor");
 	}
 	public Person()
 	{
@@ -41,6 +42,11 @@ class Person implements Cloneable
 		System.out.println(super.getClass().getName());//返回运行时类的信息，此处即Person
 		System.out.println(this.getClass().getSuperclass().getName());
 		return (Person) super.clone();
+	}
+	@Override
+	public String toString()
+	{
+		return name+" "+id;
 	}
 }
 
@@ -79,6 +85,31 @@ class Mouse implements Cloneable
 		return super.clone();
 	}
 }
+/**
+ * test if its possible to clone with final fields
+ * @author ASUS
+ *
+ */
+class CloneWithFinalField implements Cloneable
+{
+	private final int id;
+
+	public CloneWithFinalField(int id)
+	{
+		this.id = id;
+	}
+	
+	public int getId()
+	{
+		return id;
+	}
+
+	@Override
+	public String toString()
+	{
+		return id+"";
+	}
+}
 
 /**
  * something about clone
@@ -89,6 +120,35 @@ public class TheClone
 {
 	public static void main(String[] args)
 	{
+		CloneWithFinalField[] fields=new CloneWithFinalField[10];
+		for (int i = 0; i < fields.length; i++)
+		{
+			fields[i]=new CloneWithFinalField(i);
+		}
+		CloneWithFinalField[] fields1=fields.clone();
+		for (CloneWithFinalField cloneWithFinalField : fields1)
+		{
+			System.out.println(cloneWithFinalField);
+		}
+		
+		/*
+		//array copy
+		Person[] persons=new Person[10];
+		for (int i = 0; i < persons.length; i++)
+		{
+			persons[i]=new Person("#name"+i, i);
+		}
+		Person[] persons2=persons.clone();
+		
+		persons[1].setName("changed");
+		
+		//turns out to be shallow copy
+		for (Person person : persons2)
+		{
+			System.out.println(person);
+		}
+		*/
+		
 		/*
 		Computer computer=new Computer(new Mouse());
 		try
@@ -111,7 +171,7 @@ public class TheClone
 		
 		System.out.println(b==a);//1和2对应的输出结果是:true和false
 		*/
-		
+		/*
 		//
 		Person person=new Person("long", 0);
 		try
@@ -124,7 +184,7 @@ public class TheClone
 		{
 			e.printStackTrace();
 		}
-		
+		*/
 		/*
 		//fail to cloned if not implement cloneable, in addition, the array implements the clonable by default
 		Book book=new Book("a", 0f);

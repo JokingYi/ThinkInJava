@@ -1,7 +1,5 @@
 package com.lzh.modifier;
 
-import java.util.jar.Attributes.Name;
-
 public class CacheImmutable
 {
 	private final String string;

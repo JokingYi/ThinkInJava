@@ -1,5 +1,6 @@
 package com.lzh.containers;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -12,6 +13,7 @@ public class TheWeakMap
 		String a=new String("a");
 		String b=new String("b");
 		Map<String, String> weakMap=new WeakHashMap<>();
+		weakMap=new HashMap<String, String>();
 		weakMap.put(a, "aaa");
 		weakMap.put(b, "bbb");
 		

@@ -28,6 +28,8 @@ public class Casual
 {
 	public static void main(String[] args)
 	{
+		int i=Integer.MIN_VALUE;
+		
 //		InClass2 inClass2=new NestedClass().new InClass2();
 		InClass inClass=new InClass();
 		System.out.println(inClass);

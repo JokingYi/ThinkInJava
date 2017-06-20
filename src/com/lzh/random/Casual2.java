@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 class M
 {
@@ -17,6 +18,8 @@ public class Casual2
 {
 	public static void main(String[] args)
 	{
+		Set<String> set;
+		
 		/*
 		List<List<String>> container=new ArrayList<>();
 		List<String> items=new ArrayList<>();
