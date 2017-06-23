@@ -28,11 +28,16 @@ public class Casual
 {
 	public static void main(String[] args)
 	{
+//		long diff=3l-4l;
+//		System.out.println(diff);
+		
+		/*
 		int i=Integer.MIN_VALUE;
 		
 //		InClass2 inClass2=new NestedClass().new InClass2();
 		InClass inClass=new InClass();
 		System.out.println(inClass);
+		*/
 //		Casual casual=new Casual();
 //		System.out.println(casual.aboutException());
 		
