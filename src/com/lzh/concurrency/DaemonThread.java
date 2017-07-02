@@ -1,6 +1,5 @@
 package com.lzh.concurrency;
 
-import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
 public class DaemonThread implements Runnable
