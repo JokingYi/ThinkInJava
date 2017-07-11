@@ -23,13 +23,26 @@ class Base extends Super
 	{
 		super.print();
 	}
+	public void info()
+	{
+		System.out.println("something");
+	}
 }
 
 public class TheConstructors
 {
 	public static void main(String[] args)
 	{
+		Super super1=new Base();
+		Base base=(Base) super1;
+		base.info();
+		
+		/*
+		//can be compiled, but will throw an error
+		Base base=(Base) new Super();
+		base.what();
+		*/
 		//test super keyword
-		new Base().what();
+//		new Base().what();
 	}
 }

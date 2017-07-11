@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.channels.Channels;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 
@@ -14,13 +15,14 @@ public class BufferToText
 	public static void main(String[] args) throws IOException
 	{
 		
-		FileChannel channel=new FileInputStream("d:/copy.txt").getChannel();
+		FileChannel channel=new FileInputStream("d:/test.txt").getChannel();
 		ByteBuffer buffer=ByteBuffer.allocate(SIZE);
 		channel.read(buffer);
 		buffer.flip();
-		System.out.println(buffer.asCharBuffer().toString());
-//		buffer.rewind();
-		System.out.println(Charset.forName("utf-8").decode(buffer));
 		
+//		System.out.println(buffer.asCharBuffer().toString());
+//		System.out.println(Charset.forName(""));
+//		buffer.rewind();
+//		System.out.println(Charset.forName("utf-8").decode(buffer));
 	}
 }

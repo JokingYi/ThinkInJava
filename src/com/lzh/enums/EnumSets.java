@@ -10,8 +10,8 @@ public class EnumSets
 	{
 		//Ð§ÂÊ¸ß
 		EnumSet<AlarmPoints> points=EnumSet.noneOf(AlarmPoints.class);
-		points.add(AlarmPoints.STAIR1);
 		points.add(AlarmPoints.STAIR2);
+		points.add(AlarmPoints.STAIR1);
 		points.addAll(EnumSet.of(AlarmPoints.LOBBY, AlarmPoints.KITCHEN));
 		for (AlarmPoints enum1 : points)
 		{
