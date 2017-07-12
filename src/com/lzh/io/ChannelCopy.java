@@ -5,7 +5,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
-
+/**
+ * as the name suggested
+ * @author ASUS
+ *
+ */
 public class ChannelCopy
 {
 	private static final int SIZE=100;
@@ -17,8 +21,7 @@ public class ChannelCopy
 				out=new FileOutputStream("d:/copy.txt").getChannel();
 		
 		//method2
-		in.transferTo(0, in.size(), out);
-		/*
+//		in.transferTo(0, in.size(), out);
 		//method1
 		ByteBuffer buffer=ByteBuffer.allocate(SIZE);
 		while(in.read(buffer)!=-1)
@@ -30,6 +33,5 @@ public class ChannelCopy
 		}
 		out.close();
 		in.close();
-		*/
 	}
 }
