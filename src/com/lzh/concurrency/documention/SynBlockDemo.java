@@ -18,13 +18,14 @@ public class SynBlockDemo
 			synchronized (SynBlockDemo.class)
 			{
 				System.out.println("Task1 started");
-				System.out.println("task1 is waiting");
+				System.out.println("task1 is sleeping");
 				
 				try
 				{
 					TimeUnit.SECONDS.sleep(3);
+					System.out.println("task1 is waiting");
 					SynBlockDemo.class.wait();
-					wait(0);
+//					wait(0);
 				} catch (InterruptedException e)
 				{
 					e.printStackTrace();
@@ -41,7 +42,7 @@ public class SynBlockDemo
 			synchronized (SynBlockDemo.class)
 			{
 				System.out.println("task2 started");
-				System.out.println("task2 is waiting");
+				System.out.println("task2 is sleeping");
 				SynBlockDemo.class.notify();
 				try
 				{

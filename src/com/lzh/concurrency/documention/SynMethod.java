@@ -14,6 +14,24 @@ public class SynMethod
 			//the object instance
 			System.out.println("test if the static method use diff lock");
 		}
+		public void insideSyn()
+		{
+			
+			synchronized (this)
+			{
+				try
+				{
+					TimeUnit.SECONDS.sleep(1);
+				} catch (InterruptedException e)
+				{
+					e.printStackTrace();
+				}
+				//yes,thats true
+				System.out.println("test if synchronized block on this "
+						+ "is the same with the key word synchronized");
+			}
+		}
+		
 		synchronized public void increment()
 		{
 			try
@@ -99,6 +117,15 @@ public class SynMethod
 		Thread thread=new Thread(new NumAddTask(num));
 		Thread thread2=new Thread( new NumDeTask(num));
 		Thread thread3=new Thread(new PrintTask(num));
+		new Thread(new Runnable()
+		{
+			
+			@Override
+			public void run()
+			{
+				num.insideSyn();
+			}
+		}).start();
 		thread.start();
 		thread2.start();
 		thread3.start();

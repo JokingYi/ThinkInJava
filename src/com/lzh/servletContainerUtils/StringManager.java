@@ -59,8 +59,13 @@ package com.lzh.servletContainerUtils;
 
 import java.text.MessageFormat;
 import java.util.Hashtable;
+import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
+
+import javax.annotation.Resource;
+
+import org.apache.tomcat.jni.Local;
 
 import com.lzh.servletContainer2.Constants;
 
@@ -259,7 +264,15 @@ public class StringManager {
     //test
     public static void main(String[] args)
 	{
-		StringManager manager= StringManager.getManager(Constants.Package);
-		System.out.println(manager.getString("requestStream.readline.error"));
+//    	Locale locale=Locale.getDefault();
+//    	System.out.println(locale.getLanguage());
+//    	System.out.println(locale.getCountry());
+//		StringManager manager= StringManager.getManager(Constants.Package);
+//		System.out.println(manager.getString("requestStream.readline.error"));
+    	
+		//test my own resource bundle
+    	//jdk下面有一个相应的工具：native2ascill
+//		ResourceBundle bundle= ResourceBundle.getBundle(Constants.Package+".TestString");
+//		System.out.println(bundle.getString("searchError"));
 	}
 }

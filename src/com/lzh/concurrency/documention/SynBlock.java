@@ -8,6 +8,7 @@ public class SynBlock
 	{
 		private long l1=0;
 		private long l2=0;
+		//its better to be declared as final
 		private Object lock1=new Object();
 		private Object lock2=new Object();
 		
@@ -28,7 +29,7 @@ public class SynBlock
 		}
 		public void AddL2()
 		{
-			synchronized (lock2)
+			synchronized (lock1)
 			{
 				try
 				{

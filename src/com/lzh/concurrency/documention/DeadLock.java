@@ -23,13 +23,14 @@ public class DeadLock
 		synchronized public void bowBack(Friend friend)
 		{
 			System.out.println("back");
-			System.out.format("%s has bow to me!", this.getName());
+			System.out.format("%s has bow to me!%n", this.getName());
 		}
 	}
 	public static void main(String[] args)
 	{
 		Friend friend=new Friend("a");
 		Friend friend1=new Friend("b");
+		//都先抢好一个锁，然后调用另一个需要该锁的方法
 		new Thread(new Runnable()
 		{
 			
@@ -45,6 +46,13 @@ public class DeadLock
 			@Override
 			public void run()
 			{
+				/*try
+				{
+					Thread.sleep(1000);
+				} catch (InterruptedException e)
+				{
+					e.printStackTrace();
+				}*/
 				friend1.bow(friend);
 			}
 		}).start();

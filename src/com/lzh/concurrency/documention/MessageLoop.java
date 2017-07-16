@@ -2,6 +2,10 @@ package com.lzh.concurrency.documention;
 
 public class MessageLoop
 {
+	/**
+	 * message about the current thread
+	 * @param message
+	 */
 	public static void threadMessage(String message)
 	{
 		String threadName=Thread.currentThread().getName();
@@ -22,7 +26,7 @@ public class MessageLoop
 				threadMessage(strings[i]);
 				try
 				{
-					Thread.sleep(1000);
+					Thread.sleep(3000);
 				} catch (InterruptedException e)
 				{
 					System.out.println("i wasnt done!");
@@ -35,7 +39,7 @@ public class MessageLoop
 	}
 	public static void main(String[] args) throws InterruptedException
 	{
-		long patience=1000*3;
+		long patience=1000*3*4;
 		threadMessage("starting main thread");
 		Thread thread=new Thread(new Loop());
 		long startTime=System.currentTimeMillis();
@@ -46,7 +50,7 @@ public class MessageLoop
 		while (thread.isAlive())
 		{
 			threadMessage("still waiting");
-			thread.join(1000);
+			thread.join(3000);
 			if (System.currentTimeMillis()-startTime>patience && thread.isAlive())
 			{
 				threadMessage("long enough, time to stop");
