@@ -28,8 +28,6 @@ public class Casual
 {
 	public static void main(String[] args)
 	{
-		String string="";
-		string.replaceAll("", string);
 //		long diff=3l-4l;
 //		System.out.println(diff);
 		

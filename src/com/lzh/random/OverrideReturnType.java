@@ -43,9 +43,12 @@ public class OverrideReturnType
 {
 	public static void main(String[] args)
 	{
-		int i=(int) 10l;
-		byte b=3;
-		int j=b;
-		new Base1().testReturnObject();
+//		int i=(int) 10l;
+//		byte b=3;
+//		int j=b;
+		//		new Base1().testReturnObject();
+		
+		//return the direct parent
+		System.out.println(Base1.class.getSuperclass().getName());
 	}
 }

@@ -39,10 +39,11 @@ public class RequestInvocationHandler implements InvocationHandler
 		ISubject subject=(ISubject) Proxy.newProxyInstance(RequestInvocationHandler.class.getClassLoader()
 				, new Class[]{ISubject.class} 
 				, new RequestInvocationHandler(new SubjectImpl()));
-		Class<?> subjectClass=Proxy.getProxyClass(RequestInvocationHandler.class.getClassLoader()
-				, new Class[]{ISubject.class} );
-		System.out.println(subjectClass.getName());//same with the next line
+//		Class<?> subjectClass=Proxy.getProxyClass(RequestInvocationHandler.class.getClassLoader()
+//				, new Class[]{ISubject.class} );
+//		System.out.println(subjectClass.getName());//same with the next line
 		System.out.println(subject.getClass().getName());//same with the proxy.name;
+		System.out.println(subject.getClass().getSuperclass().getName());
 		subject.request();
 	}
 
