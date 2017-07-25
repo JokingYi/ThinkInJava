@@ -1,6 +1,7 @@
 package com.lzh.modifier;
 
 import com.lzh.model.Book;
+import com.lzh.utils.GeneralUtils;
 
 final class MethodInFinal
 {

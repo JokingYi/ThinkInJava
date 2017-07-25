@@ -4,7 +4,7 @@ class TestStatic
 {
 	public TestStatic()
 	{
-		System.out.println("in field construtor");
+		System.out.println("in static field construtor");
 	}
 }
 class TestStatic2
@@ -30,12 +30,11 @@ public class AboutStatic
 	}
 	public AboutStatic()
 	{
-		System.out.println("in constructor");//forth
+		System.out.println("in the current object constructor");//forth
 	}
 	public static void main(String[] args)
 	{
 		AboutStatic aboutStatic=new AboutStatic();
-		
 //		TestStatic2 static2=new TestStatic2();
 //		static2.printId();
 //		new TestStatic2().printId();

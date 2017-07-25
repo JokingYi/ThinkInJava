@@ -12,7 +12,8 @@ public class AboutSingleton
 	{
 		if (aboutSingleton==null)
 		{
-			return new AboutSingleton();
+			aboutSingleton=new AboutSingleton();
+			return aboutSingleton;
 		}
 		return aboutSingleton;
 	}
