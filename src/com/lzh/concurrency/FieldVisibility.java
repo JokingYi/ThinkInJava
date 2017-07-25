@@ -23,12 +23,14 @@ public class FieldVisibility
 	public static void main(String[] args)
 	{
 		UnsafeClass unsafeClass=new UnsafeClass();
+		//times are, when the value is put, but still the other thread can
+		//not read the value, thus, "the value is null"
 		new Thread(new Runnable()
 		{
 			@Override
 			public void run()
 			{
-				unsafeClass.putString();
+				unsafeClass.readString();
 			}
 		}).start();
 		new Thread(new Runnable()
@@ -37,7 +39,7 @@ public class FieldVisibility
 			@Override
 			public void run()
 			{
-				unsafeClass.readString();;
+				unsafeClass.putString();
 			}
 		}).start();
 	}
