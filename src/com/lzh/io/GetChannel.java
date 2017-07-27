@@ -14,7 +14,7 @@ import java.nio.channels.FileChannel;
 
 public class GetChannel
 {
-	private static final int SIZE=2048;
+	private static final int SIZE=20480;
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws Exception
 	{
@@ -48,7 +48,7 @@ public class GetChannel
 			System.out.println((char) buffer.get());
 		*/
 		
-/*		
+		/*		
 		//write data to certain file by channel
 		long start=System.currentTimeMillis();
 		FileChannel channel=new FileOutputStream("d:/newIo.txt").getChannel();
@@ -82,40 +82,43 @@ public class GetChannel
 		outputStream.close();
 		*/
 		
-		//the follow two block show how channel get by another stream
+		//the follow block show how channel get by another stream
 		/*channel=new RandomAccessFile("d:/newIo.txt", "rw").getChannel();
 		channel.position(channel.size());
 		channel.write(ByteBuffer.wrap(" some more writed".getBytes()));
 		channel.close();*/
 		
-		//the next two block compared the performance between normal buffered 
+		//the next two blocks compared the performance between normal buffered 
 		//inputstream and file channel
-		/*System.out.println("method1");
+		//which turns out that the bufferd inputstream precede the file channel
+		/*
+		System.out.println("method1");
 		long start3=System.currentTimeMillis();
 		channel=new FileInputStream("d:/newIo.txt").getChannel();
 		ByteBuffer buffer=ByteBuffer.allocate(SIZE);
-		int num, temp=0;
+		int num;
 		while((num=channel.read(buffer))!=-1)
 		{
 //			System.out.println(channel.read(buffer));
-			buffer.position(temp);
-			System.out.println("-----"+num);
-			temp+=num;
+			buffer.position(0);
 			while(buffer.hasRemaining())
 			{
 				System.out.print(buffer.get());
 			}
+			System.out.println();
+			buffer.position(0);
 		}
 		System.out.println();
 		System.out.println("time consumed when read file by channel: "+
 				(System.currentTimeMillis()-start3));
-		channel.close();*/
-		/*
+		channel.close();
+		*/
+/*		
 		System.out.println("method2");
 		long start4=System.currentTimeMillis();
 		InputStream inputStream=new BufferedInputStream(
 				new FileInputStream("d:/newIo.txt"));
-		byte[] buffer2=new byte[2048];
+		byte[] buffer2=new byte[20480];
 		int numRead=inputStream.read(buffer2);
 		while(numRead!=-1)
 		{

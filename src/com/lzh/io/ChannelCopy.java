@@ -21,7 +21,7 @@ public class ChannelCopy
 				out=new FileOutputStream("d:/copy.txt").getChannel();
 		
 		//method2
-//		in.transferTo(0, in.size(), out);
+		in.transferTo(0, in.size(), out);
 		//method1
 		ByteBuffer buffer=ByteBuffer.allocate(SIZE);
 		while(in.read(buffer)!=-1)
