@@ -18,6 +18,7 @@ public class GetChannel
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws Exception
 	{
+		FileChannel channel=null;
 		/*
 		//more about order(), please refer to ByteBufferDemo
 		byte[] bs="test".getBytes();
@@ -36,7 +37,7 @@ public class GetChannel
 			System.out.println(b);
 		}
 		*/
-		FileChannel channel=null;
+		
 		/*
 		//测试由fileoutputstream返回的filechannel能不能读取它
 		//抛出异常...
@@ -89,22 +90,26 @@ public class GetChannel
 		
 		//the next two block compared the performance between normal buffered 
 		//inputstream and file channel
-		/*
-		System.out.println("method1");
+		/*System.out.println("method1");
 		long start3=System.currentTimeMillis();
 		channel=new FileInputStream("d:/newIo.txt").getChannel();
-		ByteBuffer buffer=ByteBuffer.allocate(SIZE); 
-		System.out.println(channel.read(buffer));
-		buffer.flip();
-		while(buffer.hasRemaining())
+		ByteBuffer buffer=ByteBuffer.allocate(SIZE);
+		int num, temp=0;
+		while((num=channel.read(buffer))!=-1)
 		{
-			System.out.print(buffer.get());
+//			System.out.println(channel.read(buffer));
+			buffer.position(temp);
+			System.out.println("-----"+num);
+			temp+=num;
+			while(buffer.hasRemaining())
+			{
+				System.out.print(buffer.get());
+			}
 		}
 		System.out.println();
 		System.out.println("time consumed when read file by channel: "+
-			(System.currentTimeMillis()-start3));
-		channel.close();
-		*/
+				(System.currentTimeMillis()-start3));
+		channel.close();*/
 		/*
 		System.out.println("method2");
 		long start4=System.currentTimeMillis();
@@ -114,6 +119,7 @@ public class GetChannel
 		int numRead=inputStream.read(buffer2);
 		while(numRead!=-1)
 		{
+			System.out.println("circle");
 			for (int j = 0; j < buffer2.length; j++)
 			{
 				System.out.print(buffer2[j]);
