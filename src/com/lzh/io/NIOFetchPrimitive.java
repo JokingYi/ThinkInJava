@@ -16,5 +16,4 @@ public class NIOFetchPrimitive
 			System.out.println(c);
 		}
 	}
-
 }

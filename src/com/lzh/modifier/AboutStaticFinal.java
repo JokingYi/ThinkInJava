@@ -27,9 +27,10 @@ public class AboutStaticFinal
 	public static void main(String[] args)
 	{
 		//both of them wont invoke the constructor
-//		System.out.println(AboutStaticFinal.test);
+		System.out.println(AboutStaticFinal.test);
+		System.out.println(AboutStaticFinal.class);
 //		System.out.println(AboutStaticFinal.NUM);
 //		System.out.println(OutClass.Num);
-		System.out.println(OutClass.test);
+//		System.out.println(OutClass.test);
 	}
 }
