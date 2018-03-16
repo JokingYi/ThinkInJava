@@ -17,10 +17,11 @@ public class TheServerSocket
 		ServerSocket server=null;
 		try
 		{
-			server=new ServerSocket(60001);
-			System.out.println("服务端口启动");
+			server=new ServerSocket(6000);
+			System.out.println("server socket created");
+			System.out.println("waiting...");
 			Socket socket=server.accept();
-			System.out.println("已连接...");
+			System.out.println("waiting...");
 			
 			out=new PrintWriter(socket.getOutputStream());
 			input=new BufferedReader(

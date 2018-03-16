@@ -4,7 +4,7 @@ public class ChineseChar
 {
 	public static void main(String[] args)
 	{
-		char ch='¾ý';
+		char ch=' ';
 		System.out.println((int)ch);
 	}
 }

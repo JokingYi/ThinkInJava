@@ -6,10 +6,12 @@ public class AboutRandom
 {
 	public static void main(String[] args)
 	{
+		System.out.println(System.currentTimeMillis());
+		/*
 		Random random=new Random(System.currentTimeMillis());
 		int oneTen=random.nextInt(10);
 		System.out.println(oneTen);
-		
+		*/
 		/*
 		int one = 0, two=0, three=0, fore=0, five=0;
 		for (int i = 0; i < 10000; i++)
