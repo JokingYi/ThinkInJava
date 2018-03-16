@@ -16,4 +16,9 @@ public class ThePattern
 		System.out.println(pattern.matcher(test).matches());
 		*/
 	}
+	private static void testRegexApi()
+	{
+		
+	}
+	
 }

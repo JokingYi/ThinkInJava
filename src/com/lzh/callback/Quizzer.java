@@ -1,5 +1,7 @@
 package com.lzh.callback;
 
+import java.util.concurrent.TimeUnit;
+
 public class Quizzer implements CallBack, Runnable
 {
 	private Answer answer;
@@ -9,9 +11,12 @@ public class Quizzer implements CallBack, Runnable
 	}
 	public void doSomethingElse()
 	{
-		for (int i = 0; i < 1000;i++)
+		try
 		{
-			System.out.println("我要看海贼王，解决好了的话就通知我");
+			TimeUnit.SECONDS.sleep(2);
+		} catch (InterruptedException e)
+		{
+			e.printStackTrace();
 		}
 	}
 	@Override
