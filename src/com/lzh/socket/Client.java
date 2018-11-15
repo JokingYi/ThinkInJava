@@ -16,12 +16,12 @@ public class Client
 	{
 		try
 		{	
-			Socket socket=new Socket("192.168.8.120", 60000);
+			Socket socket=new Socket("192.168.0.86", 6000);
 			System.out.println("client created");
 			
 			PrintWriter writer=new PrintWriter(socket.getOutputStream());
 			
-			BufferedReader reader=new BufferedReader(new FileReader(new File("d:/testClient.txt")));
+			BufferedReader reader=new BufferedReader(new FileReader(new File("C:/Users/ASUS/Desktop/client.txt")));
 			String string =reader.readLine();
 			boolean first=true;
 			while(!"end".equals(string))

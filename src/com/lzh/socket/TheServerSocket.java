@@ -25,7 +25,7 @@ public class TheServerSocket
 			
 			out=new PrintWriter(socket.getOutputStream());
 			input=new BufferedReader(
-					new FileReader(new File("d:/testServer.txt")));
+					new FileReader(new File("C:/Users/ASUS/Desktop/client.txt")));
 			
 			String string=input.readLine();
 			boolean first=true;
