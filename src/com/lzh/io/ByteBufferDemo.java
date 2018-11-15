@@ -1,7 +1,10 @@
 package com.lzh.io;
 
+import java.io.ObjectInputStream;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.nio.IntBuffer;
+import java.nio.channels.FileChannel;
 import java.util.Arrays;
 
 import org.eclipse.jdt.core.BuildJarIndex;
@@ -15,15 +18,14 @@ public class ByteBufferDemo
 {
 	public static void main(String[] args)
 	{
-		/*
 		//with only 2 byte, cannot put a int
 		//even though it seems like only take one from the next block result
-		ByteBuffer buffer=ByteBuffer.allocate(2);
+		/*ByteBuffer buffer=ByteBuffer.allocate(2);
 		buffer.putInt(2);
 		buffer.flip();
-		System.out.println(buffer.getInt());
-		*/
+		System.out.println(buffer.getInt());*/
 		//to see the presentation of the primitive type in bytebuffer
+		/*
 		ByteBuffer buffer=ByteBuffer.allocate(8);
 		buffer.putInt(500);
 		System.out.println(Arrays.toString(buffer.array()));
@@ -35,6 +37,7 @@ public class ByteBufferDemo
 		System.out.println(Arrays.toString(buffer.array()));
 		buffer.position(0);
 		System.out.println(buffer.getChar());
+		*/
 		/*ByteBuffer byteBuffer=ByteBuffer.allocate(4);
 		ByteBuffer newByteBuffer=byteBuffer.order(ByteOrder.LITTLE_ENDIAN);
 		byte[] byteSrc="test".getBytes();
@@ -84,6 +87,10 @@ public class ByteBufferDemo
 		System.out.println(Long.toHexString(buf.getLong()));
 		System.out.println(buf.getDouble());
 		*/
-		
+		ByteBuffer buffer=ByteBuffer.allocate(10);
+		buffer.asCharBuffer().put("abcde");
+		System.out.println(buffer.getChar());
+		IntBuffer intBuffer=null;
+		ObjectInputStream inputStream=null;
 	}
 }

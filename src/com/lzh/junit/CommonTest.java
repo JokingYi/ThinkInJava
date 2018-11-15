@@ -4,10 +4,14 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import org.junit.Test;
 import org.mockito.invocation.InvocationOnMock;
@@ -15,7 +19,48 @@ import org.mockito.stubbing.Answer;
 
 public class CommonTest
 {
+	int num=10000;
 	@Test
+	public void testTemp() {
+		BigInteger integer=BigInteger.ONE;
+		System.out.println(integer.nextProbablePrime());
+	}
+//	@Test
+	public void assignValue()
+	{
+		int i;
+		System.out.println(i=1);
+	}
+//	@Test
+	public void testArrayFill()
+	{
+		Arrays.fill(new char[2], '2');
+	}
+//	@Test
+	public void testStringFunc()
+	{
+		String temp="a";
+		System.out.println(temp.split("")[0]);
+		for (byte b : temp.getBytes())
+		{
+			System.out.println(b);
+		}
+		for (char c : temp.toCharArray())
+		{
+			System.out.println(c);
+		}
+	}
+//	@Test
+	public void testCon()
+	{
+		Date start=new Date();
+		System.out.println(start);
+		while(num-->0){
+		}
+		System.out.println(new Date());
+		System.out.println((new Date().getTime()-start.getTime())/1000d);
+	}
+//	@Test
 	public void temp()
 	{
 		List<String> strings=new ArrayList<>();
@@ -31,7 +76,7 @@ public class CommonTest
 			public Void answer(InvocationOnMock invocation) throws Throwable
 			{
 				String param=(String) invocation.getArguments()[0];
-//				System.out.println(param);//bingo!
+				System.out.println(param);//bingo!
 				return null;
 			}
 		}).when(temp).setString(any());

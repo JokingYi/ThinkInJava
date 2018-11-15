@@ -19,5 +19,9 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="F:/ProgrammingFiles/requiredJarForRabbitClient/slf4j-api-1.7.21.jar"/>
 	<classpathentry kind="lib" path="F:/ProgrammingFiles/requiredJarForRabbitClient/slf4j-simple-1.7.22.jar"/>
+	<classpathentry kind="lib" path="F:/Programming/m2/repository/org/mockito/mockito-core/2.8.47/mockito-core-2.8.47.jar"/>
+	<classpathentry kind="lib" path="F:/Programming/m2/repository/net/bytebuddy/byte-buddy/1.6.14/byte-buddy-1.6.14.jar"/>
+	<classpathentry kind="lib" path="F:/Programming/m2/repository/net/bytebuddy/byte-buddy-agent/1.6.14/byte-buddy-agent-1.6.14.jar"/>
+	<classpathentry kind="lib" path="F:/Programming/m2/repository/org/objenesis/objenesis/2.5/objenesis-2.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
