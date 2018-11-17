@@ -50,6 +50,7 @@ public class SemaphoreDemo {
 				try {
 					TimeUnit.SECONDS.sleep(1);
 					semaphore.release();//increment the count, without acquire one
+					//another point!!! semaphore have no notion of ownership, so a acquire can be release by another thread, unlike lock, you have to unlock it in this thread!!!
 					System.out.println("release a lock");
 				} catch (InterruptedException e) {
 					e.printStackTrace();
