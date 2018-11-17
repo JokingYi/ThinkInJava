@@ -12,6 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.junit.Test;
 import org.mockito.invocation.InvocationOnMock;
@@ -21,6 +22,27 @@ public class CommonTest
 {
 	int num=10000;
 	@Test
+	public void atomicDemo() {
+		AtomicInteger integer=new AtomicInteger(0);
+		integer.incrementAndGet();
+	}
+//	@Test
+	public void bitOperator2() {
+		System.out.println(Integer.toBinaryString(-1));
+		System.out.println(-5>>>4);
+		System.out.println(Integer.toBinaryString(64));
+		System.out.println(Integer.toBinaryString(63));
+		int countBits=Integer.SIZE-3;
+		System.out.println(-1 << countBits);
+	}
+//	@Test
+	public void bitOperator() {
+		for (int i = -1; i < 4; i++) {
+			int temp=i<<29;
+			System.out.println(temp+" : "+Integer.toBinaryString(temp));
+		}
+	}
+//	@Test
 	public void testTemp() {
 		BigInteger integer=BigInteger.ONE;
 		System.out.println(integer.nextProbablePrime());

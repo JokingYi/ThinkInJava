@@ -12,9 +12,32 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public class ExecutorServiceDemo {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		ExecutorServiceDemo demo=new ExecutorServiceDemo();
 		demo.shutDownDemo();
+	}
+	public void shutdownWithThread() throws InterruptedException {
+		ExecutorService service=Executors.newSingleThreadExecutor();
+		service.execute(new Runnable() {
+			@Override
+			public void run() {
+				new Thread(new Runnable() {
+					@Override
+					public void run() {
+						try {
+							System.out.println("inner thread start");
+							TimeUnit.SECONDS.sleep(5);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}finally {
+							System.out.println("inner thread end");
+						}
+					}
+				}).start();
+			}
+		});
+		service.shutdown();
+		service.awaitTermination(1, TimeUnit.MICROSECONDS);
 	}
 	public void shutDownDemo() {
 		ExecutorService service=Executors.newFixedThreadPool(1);
@@ -25,7 +48,7 @@ public class ExecutorServiceDemo {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		List<Runnable> tasks= service.shutdownNow();//return task that started
+		List<Runnable> tasks= service.shutdownNow();//return task that never started
 		System.out.println(tasks.size());
 		System.out.println(tasks);
 	}
