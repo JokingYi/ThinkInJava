@@ -1,5 +1,7 @@
 package com.lzh.concurrency;
 
+import java.util.concurrent.TimeUnit;
+
 class Sleeper extends Thread
 {
 	private long sleepTime;
@@ -49,8 +51,29 @@ class Joinner extends Thread
 
 public class Joining
 {
-	public static void main(String[] args)
+	public static void main(String[] args) throws InterruptedException
 	{
+		Joining demo=new Joining();
+		demo.longer();
+	}
+	public void longer() throws InterruptedException {
+		Thread thread=new Thread(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					TimeUnit.SECONDS.sleep(2);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}finally {
+					System.out.println("sleep end");
+				}
+			}
+		});
+		thread.start();
+		thread.join(1000);
+		System.out.println("join ended");
+	}
+	public void basic() {
 		Sleeper sleeper1=new Sleeper("long", 1500);
 		Sleeper sleeper2=new Sleeper("zhi", 1500);
 		Joinner joinner1=new Joinner("1", sleeper1);
