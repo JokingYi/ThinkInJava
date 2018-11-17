@@ -19,17 +19,14 @@ public class WaitDemo
 		public synchronized void work2()
 		{
 			System.out.println("work2 started");
-			
 			System.out.println("work2 finished");
 		}
 	}
 	public static void main(String[] args)
 	{
 		Task task=new Task();
-		
 		new Thread(new Runnable()
 		{
-			
 			@Override
 			public void run()
 			{
@@ -38,7 +35,6 @@ public class WaitDemo
 		}).start();
 		new Thread(new Runnable()
 		{
-			
 			@Override
 			public void run()
 			{
