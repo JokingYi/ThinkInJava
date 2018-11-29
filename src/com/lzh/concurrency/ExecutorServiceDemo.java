@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class ExecutorServiceDemo {
 	public static void main(String[] args) throws InterruptedException {
 		ExecutorServiceDemo demo=new ExecutorServiceDemo();
-		demo.shutDownDemo();
+		demo.shutdownWithThread();
 	}
 	public void shutdownWithThread() throws InterruptedException {
 		ExecutorService service=Executors.newSingleThreadExecutor();
@@ -38,6 +38,7 @@ public class ExecutorServiceDemo {
 		});
 		service.shutdown();
 		service.awaitTermination(1, TimeUnit.MICROSECONDS);
+		System.out.println("outer end");
 	}
 	public void shutDownDemo() {
 		ExecutorService service=Executors.newFixedThreadPool(1);
