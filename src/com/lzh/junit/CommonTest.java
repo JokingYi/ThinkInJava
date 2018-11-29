@@ -7,6 +7,7 @@ import static org.mockito.Mockito.mock;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -22,6 +23,12 @@ public class CommonTest
 {
 	int num=10000;
 	@Test
+	public void demo() {
+		List<Integer> nums=Arrays.asList(3,5,7,2,4);
+		Collections.sort(nums);
+		System.out.println(nums);
+	}
+//	@Test
 	public void atomicDemo() {
 		AtomicInteger integer=new AtomicInteger(0);
 		integer.incrementAndGet();

@@ -4,11 +4,41 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class SemaphoreDemo {
 	public static void main(String[] args) throws InterruptedException {
 		SemaphoreDemo demo=new SemaphoreDemo();
 		demo.interrupt();
+	}
+	class SemaphoreOnLock{
+		int permits;
+		ReentrantLock lock=new ReentrantLock();
+		Condition condition=lock.newCondition();
+		public SemaphoreOnLock(int permits) {
+			this.permits=permits;
+		}
+		public void acquire() throws InterruptedException {
+			lock.lock();
+			try {
+				while(permits<=0){
+					condition.await();
+				}
+				permits--;
+			} finally {
+				lock.unlock();
+			}
+		}
+		public void release() {
+			lock.lock();
+			try {
+				permits++;
+				condition.signal();
+			} finally {
+				lock.unlock();
+			}
+		}
 	}
 	public void interrupt() throws InterruptedException {
 		Semaphore semaphore=new Semaphore(0);

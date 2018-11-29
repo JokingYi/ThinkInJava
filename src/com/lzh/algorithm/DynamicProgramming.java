@@ -2,6 +2,10 @@ package com.lzh.algorithm;
 
 import static org.junit.Assert.assertTrue;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -34,6 +38,12 @@ public class DynamicProgramming
 		}
 	}
 	@Test
+	public void testInterview() throws IOException {
+		BufferedReader reader=new BufferedReader(new InputStreamReader(
+				System.in));
+		System.out.println("you input: "+reader.readLine());
+	}
+//	@Test
 	public void testRecitePI()
 	{
 		String numbers="12345";
