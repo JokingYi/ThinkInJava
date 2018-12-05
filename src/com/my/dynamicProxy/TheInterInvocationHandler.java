@@ -34,7 +34,7 @@ public class TheInterInvocationHandler implements InvocationHandler
 	public static void main(String[] args)
 	{
 		/*
-		 * normal implemation
+		 * normal implementation
 		Object object=TheInterInvocationHandler.createProxy(new InterImpls());
 		Inter1 inter1=(Inter1) object;
 		Inter2 inter2=(Inter2) object;
@@ -47,5 +47,11 @@ public class TheInterInvocationHandler implements InvocationHandler
 		baseInter.asBase();
 		SuperInter superInter=(SuperInter) object;
 		superInter.asSuper();
+		//get super class
+		Class<?> parent=object.getClass().getSuperclass();
+		while(parent!=null){
+			System.out.println(parent.getSimpleName());//print Proxy, Object in order
+			parent=parent.getSuperclass();
+		}
 	}
 }

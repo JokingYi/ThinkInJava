@@ -22,7 +22,38 @@ import org.mockito.stubbing.Answer;
 public class CommonTest
 {
 	int num=10000;
+	static class ClassInit{
+		static{
+			i=2;
+//			System.out.println(i);//compile error
+		}
+		static int i=1;
+	}
 	@Test
+	public void stringDemo() {
+		String test="test";
+		String test2="test";
+		System.out.println(test==test2);
+	}
+//	@Test
+	public void testDynamic() {
+		Touchable pad=new Pad();
+		System.out.println(pad.getClass());
+	}
+//	@Test
+	public void aboutClass() {
+		Temp temp=new Temp();
+		Temp temp2=new Temp();
+		System.out.println(temp.getClass()==temp2.getClass());
+	}
+//	@Test
+	public void arrayClassName() {
+		int[] nums=new int[1];
+		System.out.println(nums.getClass().getName());//[I
+		Temp[] temps=new Temp[1];
+		System.out.println(temps.getClass().getName());//[Lcom.lzh.junit.Temp;
+	}
+//	@Test
 	public void demo() {
 		List<Integer> nums=Arrays.asList(3,5,7,2,4);
 		Collections.sort(nums);
@@ -172,6 +203,16 @@ class IterableClass implements Iterable<String>
 				return strings[index++];
 			}
 		};
+	}
+	
+}
+interface Touchable{
+	void touch();
+}
+class Pad implements Touchable{
+	@Override
+	public void touch() {
+		System.out.println("i'm pad");
 	}
 	
 }
